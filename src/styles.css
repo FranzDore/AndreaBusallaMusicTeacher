@@ -1,1 +1,44 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+:root {
+	--primary-color: #fd26eb;
+	--secondary-color: #8829c7;
+	--black: #000;
+	--white: #fff;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Poppins', sans-serif;
+	color: var(--black)
+}
+
+body {
+	margin: 0px 5rem;
+}
+/* BUTTONS */
+
+.primary-btn {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: var(--primary-color);
+	color: var(--white);
+	padding: 0.5rem 1rem;
+	border: none;
+	border-radius: 10px;
+	cursor: pointer;
+	transition: background 0.3s ease;
+	column-gap: 6px;
+}
+
+.primary-btn i {
+	color: var(--white);
+}
+
+.primary-btn:hover {
+	background: var(--secondary-color);
+}

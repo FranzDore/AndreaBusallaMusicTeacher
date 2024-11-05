@@ -1,0 +1,62 @@
+header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	position: fixed;
+	padding: 0px 20px;
+	left: 0;
+	right: 0;
+	top: 0;
+	height: 100px;
+	background: rgba(255, 255, 255, 0.24);
+	box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+	backdrop-filter: blur(4.8px);
+	-webkit-backdrop-filter: blur(4.8px);
+	border: 1px solid rgba(255, 255, 255, 0.32);
+	z-index: 999;
+}
+
+#logo {
+	max-height: 100%;
+	padding: 10px;
+	box-sizing: border-box;
+}
+
+ul {
+	display: flex;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	justify-content: space-evenly;
+	column-gap: 1vw;
+}
+
+a {
+	text-decoration: none;
+	transition: border-bottom 1s ease;
+	display: inline-block; /* Ensures ::after only covers the link text */
+	position: relative; /* Set relative positioning to use ::after effectively */
+	transition: color 0.3s ease;
+}
+
+a:hover {
+	color: var(--primary-color);
+}
+
+/* Underline effect */
+a::after {
+	content: "";
+	width: 0;
+	height: 2px;
+	background-color: var(--black);
+	position: absolute;
+    left: 0;
+    bottom: 0; /* Position it directly below the text */
+	transition: all 0.3s ease;
+}
+
+/* Animate underline on hover */
+a:hover::after {
+	width: 100%;
+	background-color: var(--primary-color);
+}

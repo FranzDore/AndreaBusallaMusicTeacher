@@ -1,11 +1,22 @@
 import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
+import { HamburgerMenuIconComponent } from '../hamburger-menu-icon/hamburger-menu-icon.component';
+import { paths } from '../../../app.routes';
 
 @Component({
 	selector: 'app-navbar',
 	standalone: true,
-	imports: [RouterModule],
+	imports: [RouterModule, HamburgerMenuIconComponent],
 	templateUrl: './navbar.component.html',
 	styleUrl: './navbar.component.css'
 })
-export class NavbarComponent {}
+export class NavbarComponent {
+	public paths = paths;
+
+	public scrollToTop(): void {
+		window.scrollTo({
+			top: 0,
+			behavior: 'smooth'
+		});
+	}
+}

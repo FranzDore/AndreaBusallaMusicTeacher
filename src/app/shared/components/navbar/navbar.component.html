@@ -1,11 +1,12 @@
 <header>
-	<img id="logo" src="logoAndrea.png" alt="Logo of the Website" loading="lazy">
+	<img id="logo" src="logoAndrea.png" alt="Logo of the Website" loading="eager" (click)="scrollToTop()">
 	<nav>
 		<ul>
-			<li><a href="#Home">Home</a></li>
-			<li><a href="#About">Chi sono</a></li>
-			<li><a href="#Blog">Lezioni</a></li>
-			<li><a href="#Portfolio">Portfolio</a></li>
+			<li><a [routerLink]="paths.HOME">Home</a></li>
+			<li><a [routerLink]="paths.ABOUT">Chi sono</a></li>
+			<li><a [routerLink]="'#'">Lezioni</a></li>
+			<li><a [routerLink]="'#'">Portfolio</a></li>
 		</ul>
+		<app-hamburger-menu-icon></app-hamburger-menu-icon>
 	</nav>
 </header>

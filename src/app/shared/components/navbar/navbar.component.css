@@ -22,6 +22,10 @@ header {
 	box-sizing: border-box;
 }
 
+#logo:hover {
+	cursor: pointer;
+}
+
 ul {
 	display: flex;
 	list-style: none;
@@ -59,4 +63,24 @@ a::after {
 a:hover::after {
 	width: 100%;
 	background-color: var(--primary-color);
+}
+
+/* MOBILE */
+
+@media (max-width: 768px) {
+	ul {
+		display: none;
+	}
+	#logo {
+		padding: 10px 0;
+	}
+	#menu {
+		display: block;
+	}
+}
+
+@media (min-width: 768px) {
+	app-hamburger-menu-icon {
+		display: none;
+	}
 }

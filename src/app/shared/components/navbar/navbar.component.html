@@ -3,18 +3,18 @@
 	<nav>
 		<ul>
 			<li>
-				<a [class.active]="activeNavLink === 'section1'" (click)="scrollToSection('section1')">
-					Section 1
+				<a [class.active]="activeNavLink === paths.HOME" (click)="scrollToTop()">
+					Home
 				</a>
 			</li>
 			<li>
-				<a [class.active]="activeNavLink === 'section2'" (click)="scrollToSection('section2')">
-					Section 2
+				<a [class.active]="activeNavLink === paths.ABOUT" (click)="scrollToSection(paths.ABOUT)">
+					Chi sono
 				</a>
 			</li>
 			<li>
-				<a [class.active]="activeNavLink === 'section3'" (click)="scrollToSection('section3')">
-					Section 3
+				<a [class.active]="activeNavLink === paths.CONTACTS" (click)="scrollToSection(paths.CONTACTS)">
+					Contatti
 				</a>
 			</li>
 		</ul>

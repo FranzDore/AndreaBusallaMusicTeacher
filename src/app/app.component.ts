@@ -3,6 +3,7 @@ import { RouterOutlet } from '@angular/router';
 import { NavbarComponent } from './shared/components/navbar/navbar.component';
 import { HomepageComponent } from './pages/homepage/homepage.component';
 import { CurrentSectionService } from './shared/services/current-section.service';
+import { paths } from './app.routes';
 
 @Component({
 	selector: 'app-root',
@@ -12,7 +13,7 @@ import { CurrentSectionService } from './shared/services/current-section.service
 	styleUrl: './app.component.css'
 })
 export class AppComponent implements AfterViewInit {
-	title = 'AndreaBusallaMusicTeacher';
+	public paths = paths;
 	public currentSection: string = 'home';
 
 	constructor(
@@ -25,7 +26,6 @@ export class AppComponent implements AfterViewInit {
 		const observer = new IntersectionObserver(
 			entries => {
 				entries.forEach(entry => {
-					console.warn(entry)
 					if (entry.isIntersecting) {
 						this.currentSectionService.setActiveSection(entry.target.id);
 					}

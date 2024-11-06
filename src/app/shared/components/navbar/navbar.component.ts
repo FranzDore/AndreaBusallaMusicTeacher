@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { paths } from '../../../app.routes';
 import { CurrentSectionService } from '../../services/current-section.service';
+import { Subscription } from 'rxjs';
 
 @Component({
 	selector: 'app-navbar',
@@ -10,14 +11,16 @@ import { CurrentSectionService } from '../../services/current-section.service';
 	templateUrl: './navbar.component.html',
 	styleUrl: './navbar.component.css'
 })
-export class NavbarComponent {
+export class NavbarComponent implements OnInit, OnDestroy {
 	public paths = paths;
 	public activeNavLink: string = paths.HOME;
+
+	private sectionSub?: Subscription;
 
 	constructor(private currentSectionService: CurrentSectionService) {}
 
 	ngOnInit(): void {
-		this.currentSectionService.activeSection$.subscribe(
+		this.sectionSub = this.currentSectionService.activeSection$.subscribe(
 			sectionId => (this.activeNavLink = sectionId)
 		);
 	}
@@ -34,5 +37,9 @@ export class NavbarComponent {
 			top: 0,
 			behavior: 'smooth'
 		});
+	}
+
+	ngOnDestroy(): void {
+		this.sectionSub?.unsubscribe();
 	}
 }

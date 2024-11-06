@@ -6,8 +6,7 @@ import { Subject } from 'rxjs';
 })
 export class CurrentSectionService {
 	private activeSection = new Subject<string>();
-
-	activeSection$ = this.activeSection.asObservable();
+	public activeSection$ = this.activeSection.asObservable();
 
 	setActiveSection(sectionId: string) {
 		this.activeSection.next(sectionId);

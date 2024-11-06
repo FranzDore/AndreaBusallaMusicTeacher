@@ -2,10 +2,21 @@
 	<img id="logo" src="logoAndrea.png" alt="Logo of the Website" loading="eager" (click)="scrollToTop()">
 	<nav>
 		<ul>
-			<li><a [routerLink]="paths.HOME">Home</a></li>
-			<li><a [routerLink]="paths.ABOUT">Chi sono</a></li>
-			<li><a [routerLink]="'#'">Lezioni</a></li>
-			<li><a [routerLink]="'#'">Portfolio</a></li>
+			<li>
+				<a [class.active]="activeNavLink === 'section1'" (click)="scrollToSection('section1')">
+					Section 1
+				</a>
+			</li>
+			<li>
+				<a [class.active]="activeNavLink === 'section2'" (click)="scrollToSection('section2')">
+					Section 2
+				</a>
+			</li>
+			<li>
+				<a [class.active]="activeNavLink === 'section3'" (click)="scrollToSection('section3')">
+					Section 3
+				</a>
+			</li>
 		</ul>
 	</nav>
 </header>

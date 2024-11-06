@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { paths } from '../../../app.routes';
+import { CurrentSectionService } from '../../services/current-section.service';
 
 @Component({
 	selector: 'app-navbar',
@@ -11,6 +12,22 @@ import { paths } from '../../../app.routes';
 })
 export class NavbarComponent {
 	public paths = paths;
+	public activeNavLink: string = paths.HOME;
+
+	constructor(private currentSectionService: CurrentSectionService) {}
+
+	ngOnInit(): void {
+		this.currentSectionService.activeSection$.subscribe(
+			sectionId => (this.activeNavLink = sectionId)
+		);
+	}
+
+	scrollToSection(sectionId: string) {
+		document.getElementById(sectionId)?.scrollIntoView({
+			block: 'center',
+			behavior: 'smooth'
+		});
+	}
 
 	public scrollToTop(): void {
 		window.scrollTo({

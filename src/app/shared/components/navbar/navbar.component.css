@@ -45,6 +45,7 @@ a {
 
 a:hover {
 	color: var(--primary-color);
+	cursor: pointer;
 }
 
 /* Underline effect */
@@ -63,6 +64,16 @@ a::after {
 a:hover::after {
 	width: 100%;
 	background-color: var(--primary-color);
+}
+
+
+a.active {
+    color: var(--primary-color);
+}
+
+a.active::after {
+    width: 100%;
+    background-color: var(--primary-color);
 }
 
 /* MOBILE */

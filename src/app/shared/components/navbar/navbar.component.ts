@@ -1,12 +1,11 @@
 import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { HamburgerMenuIconComponent } from '../hamburger-menu-icon/hamburger-menu-icon.component';
 import { paths } from '../../../app.routes';
 
 @Component({
 	selector: 'app-navbar',
 	standalone: true,
-	imports: [RouterModule, HamburgerMenuIconComponent],
+	imports: [RouterModule],
 	templateUrl: './navbar.component.html',
 	styleUrl: './navbar.component.css'
 })

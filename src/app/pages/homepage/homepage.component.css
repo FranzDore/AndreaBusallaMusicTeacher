@@ -1,0 +1,7 @@
+.flex-divide {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	align-items: center;
+	height: calc(100vh - 100px);
+}

@@ -14,6 +14,7 @@ import { Subscription } from 'rxjs';
 export class NavbarComponent implements OnInit, OnDestroy {
 	public paths = paths;
 	public activeNavLink: string = paths.HOME;
+	public showSidenav: boolean = false;
 
 	private sectionSub?: Subscription;
 
@@ -25,7 +26,7 @@ export class NavbarComponent implements OnInit, OnDestroy {
 		);
 	}
 
-	scrollToSection(sectionId: string) {
+	public scrollToSection(sectionId: string) {
 		document.getElementById(sectionId)?.scrollIntoView({
 			block: 'center',
 			behavior: 'smooth'
@@ -37,6 +38,10 @@ export class NavbarComponent implements OnInit, OnDestroy {
 			top: 0,
 			behavior: 'smooth'
 		});
+	}
+
+	public toggleSidenav(): void {
+		this.showSidenav = !this.showSidenav;
 	}
 
 	ngOnDestroy(): void {

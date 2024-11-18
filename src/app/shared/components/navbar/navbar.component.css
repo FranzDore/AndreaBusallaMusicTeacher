@@ -68,12 +68,12 @@ a:hover::after {
 
 
 a.active {
-    color: var(--secondary-color);
+    color: var(--primary-color);
 }
 
 a.active::after {
     width: 100%;
-    background-color: var(--secondary-color);
+    background-color: var(--primary-color);
 }
 
 /* MOBILE */

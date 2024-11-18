@@ -6,6 +6,7 @@
 	--secondary-color: #8829c7;
 	--black: #000;
 	--white: #fff;
+	--mobile: 768px;
 }
 
 * {

@@ -4,11 +4,12 @@ import { NavbarComponent } from './shared/components/navbar/navbar.component';
 import { HomepageComponent } from './pages/homepage/homepage.component';
 import { CurrentSectionService } from './shared/services/current-section.service';
 import { paths } from './app.routes';
+import { AboutComponent } from './pages/about/about.component';
 
 @Component({
 	selector: 'app-root',
 	standalone: true,
-	imports: [RouterOutlet, NavbarComponent, HomepageComponent],
+	imports: [NavbarComponent, HomepageComponent, AboutComponent],
 	templateUrl: './app.component.html',
 	styleUrl: './app.component.css'
 })

@@ -1,0 +1,8 @@
+<div class="sidenav" [ngClass]="{ 'open': opened }">
+	<button (click)="toggleSidenav()">Chiudi</button>
+	<nav>
+		<a (click)="navigate('/home')">Home</a>
+		<a (click)="navigate('/search')">Ricerca</a>
+		<a (click)="navigate('/dashboard')">Cruscotto</a>
+	</nav>
+</div>

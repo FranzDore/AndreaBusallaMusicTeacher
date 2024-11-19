@@ -13,7 +13,7 @@ header {
 	backdrop-filter: blur(4.8px);
 	-webkit-backdrop-filter: blur(4.8px);
 	border: 1px solid rgba(255, 255, 255, 0.32);
-	z-index: 999;
+	z-index: 998;
 }
 
 #logo {
@@ -23,6 +23,11 @@ header {
 }
 
 #logo:hover {
+	cursor: pointer;
+}
+
+.hamburger-menu {
+	display: none;
 	cursor: pointer;
 }
 
@@ -38,8 +43,10 @@ ul {
 a {
 	text-decoration: none;
 	transition: border-bottom 1s ease;
-	display: inline-block; /* Ensures ::after only covers the link text */
-	position: relative; /* Set relative positioning to use ::after effectively */
+	display: inline-block;
+	/* Ensures ::after only covers the link text */
+	position: relative;
+	/* Set relative positioning to use ::after effectively */
 	transition: color 0.3s ease;
 }
 
@@ -55,8 +62,9 @@ a::after {
 	height: 2px;
 	background-color: var(--black);
 	position: absolute;
-    left: 0;
-    bottom: 0; /* Position it directly below the text */
+	left: 0;
+	bottom: 0;
+	/* Position it directly below the text */
 	transition: all 0.3s ease;
 }
 
@@ -68,30 +76,26 @@ a:hover::after {
 
 
 a.active {
-    color: var(--primary-color);
+	color: var(--primary-color);
 }
 
 a.active::after {
-    width: 100%;
-    background-color: var(--primary-color);
+	width: 100%;
+	background-color: var(--primary-color);
 }
 
 /* MOBILE */
 
-@media (max-width: 768px) {
+@media screen and (max-width: 768px) {
 	ul {
 		display: none;
 	}
+
 	#logo {
 		padding: 10px 0;
 	}
-	#menu {
-		display: block;
-	}
-}
 
-@media (min-width: 768px) {
-	app-hamburger-menu-icon {
-		display: none;
+	.hamburger-menu {
+		display: block;
 	}
 }

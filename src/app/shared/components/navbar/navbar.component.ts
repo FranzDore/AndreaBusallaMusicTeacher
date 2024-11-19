@@ -3,6 +3,7 @@ import { RouterModule } from '@angular/router';
 import { paths } from '../../../app.routes';
 import { CurrentSectionService } from '../../services/current-section.service';
 import { Subscription } from 'rxjs';
+import { SidenavService } from '../../services/sidenav.service';
 
 @Component({
 	selector: 'app-navbar',
@@ -18,7 +19,10 @@ export class NavbarComponent implements OnInit, OnDestroy {
 
 	private sectionSub?: Subscription;
 
-	constructor(private currentSectionService: CurrentSectionService) {}
+	constructor(
+		private currentSectionService: CurrentSectionService,
+		private sidenavService: SidenavService
+	) {}
 
 	ngOnInit(): void {
 		this.sectionSub = this.currentSectionService.activeSection$.subscribe(
@@ -41,7 +45,7 @@ export class NavbarComponent implements OnInit, OnDestroy {
 	}
 
 	public toggleSidenav(): void {
-		this.showSidenav = !this.showSidenav;
+		this.sidenavService.toggle()
 	}
 
 	ngOnDestroy(): void {

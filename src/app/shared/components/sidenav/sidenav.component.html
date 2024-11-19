@@ -1,5 +1,7 @@
 <div class="sidenav" [ngClass]="{ 'open': opened }">
-	<button (click)="toggleSidenav()">Chiudi</button>
+	<button (click)="toggleSidenav()">
+		<i class="fa-solid fa-x"></i>
+	</button>
 	<nav>
 		<a (click)="navigate('/home')">Home</a>
 		<a (click)="navigate('/search')">Ricerca</a>

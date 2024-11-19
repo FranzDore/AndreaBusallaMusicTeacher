@@ -13,7 +13,7 @@ header {
 	backdrop-filter: blur(4.8px);
 	-webkit-backdrop-filter: blur(4.8px);
 	border: 1px solid rgba(255, 255, 255, 0.32);
-	z-index: 998;
+	z-index: 997;
 }
 
 #logo {

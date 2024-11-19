@@ -24,13 +24,20 @@ export class SidenavComponent implements OnInit {
 		});
 	}
 
-	toggleSidenav() {
+	public toggleSidenav() {
 		this.sidenavService.toggle();
 	}
 
-	navigate(destination: string) {
+	public navigate(destination: string) {
 		this.router.navigate([destination]).finally(() => {
 			this.toggleSidenav();
+		});
+	}
+
+	public scrollToSection(sectionId: string) {
+		document.getElementById(sectionId)?.scrollIntoView({
+			block: 'center',
+			behavior: 'smooth'
 		});
 	}
 }

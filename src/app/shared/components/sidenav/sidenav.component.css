@@ -1,28 +1,31 @@
 .sidenav {
-	width: 250px;
-	height: 100vh;
-	position: fixed;
-	top: 0;
-	left: -250px;
-	background-color: green;
-	color: white;
-	overflow-x: hidden;
-	transition: 0.3s;
 	display: flex;
 	flex-direction: column;
-	padding-top: 20px;
-	z-index: 999;
+	justify-content: start;
+	column-gap: 3rem;
+	align-items: center;
+	position: fixed;
+	width: 250px;
+	height: 100vh;
+	top: 0;
+	right: -250px;
+	background-color: var(--white);
+	overflow-x: hidden;
+	flex-direction: column;
+	transition: 0.3s;
+	z-index: 999 !important;
+	border-left: 1px solid var(--black);
 }
 
 .sidenav.open {
-	left: 0;
+	right: 0;
 }
 
 .sidenav button {
 	margin: 10px;
 	background: none;
 	border: none;
-	color: white;
+	color: var(--white);
 	font-size: 20px;
 	cursor: pointer;
 }
@@ -31,7 +34,7 @@
 	padding: 8px 8px 8px 16px;
 	text-decoration: none;
 	font-size: 25px;
-	color: white;
+	color: var(--black);
 	display: block;
 	transition: 0.3s;
 	cursor: pointer;
@@ -39,4 +42,10 @@
 
 .sidenav nav a:hover {
 	color: #f1f1f1;
+}
+
+@media screen and (min-width: 768px) {
+	.sidenav {
+		display: none;
+	}
 }

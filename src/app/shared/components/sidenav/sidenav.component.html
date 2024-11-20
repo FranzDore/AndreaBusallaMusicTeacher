@@ -1,10 +1,27 @@
+<div class="sidenav-overlay" [ngClass]="{ 'open': opened }" (click)="toggleSidenav()"></div>
 <div class="sidenav" [ngClass]="{ 'open': opened }">
 	<button (click)="toggleSidenav()">
 		<i class="fa-solid fa-x"></i>
 	</button>
+	<img id="logo" src="logoAndrea.png" alt="Logo of the Website" loading="eager">
 	<nav>
-		<a (click)="navigate('/home')">Home</a>
-		<a (click)="navigate('/search')">Ricerca</a>
-		<a (click)="navigate('/dashboard')">Cruscotto</a>
+		<a (click)="scrollToSection(paths.HOME)">
+			<div>
+				<i class="fa-solid fa-house"></i>
+				<p>{{ navLinks.HOME }}</p>
+			</div>
+		</a>
+		<a (click)="scrollToSection(paths.ABOUT)">
+			<div>
+				<i class="fa-solid fa-user"></i>
+				<p>{{ navLinks.ABOUT }}</p>
+			</div>
+		</a>
+		<a (click)="scrollToSection(paths.CONTACTS)">
+			<div>
+				<i class="fa-solid fa-phone"></i>
+				<p>{{ navLinks.CONTACTS }}</p>
+			</div>
+		</a>
 	</nav>
 </div>

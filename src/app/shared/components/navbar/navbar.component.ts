@@ -4,6 +4,7 @@ import { paths } from '../../../app.routes';
 import { CurrentSectionService } from '../../services/current-section.service';
 import { Subscription } from 'rxjs';
 import { SidenavService } from '../../services/sidenav.service';
+import { navLinks } from '../../constants/navigation.const';
 
 @Component({
 	selector: 'app-navbar',
@@ -14,6 +15,8 @@ import { SidenavService } from '../../services/sidenav.service';
 })
 export class NavbarComponent implements OnInit, OnDestroy {
 	public paths = paths;
+	public navLinks = navLinks;
+
 	public activeNavLink: string = paths.HOME;
 	public showSidenav: boolean = false;
 
@@ -45,7 +48,7 @@ export class NavbarComponent implements OnInit, OnDestroy {
 	}
 
 	public toggleSidenav(): void {
-		this.sidenavService.toggle()
+		this.sidenavService.toggle();
 	}
 
 	ngOnDestroy(): void {

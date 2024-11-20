@@ -40,7 +40,7 @@ export class AppComponent implements OnInit, AfterViewInit {
 					}
 				});
 			},
-			{ threshold: 0.7 }
+			{ threshold: 0.9 }
 		);
 
 		sections.forEach((section: HTMLElement) => observer.observe(section));

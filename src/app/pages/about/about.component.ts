@@ -1,13 +1,17 @@
+import { NgClass } from '@angular/common';
 import { Component } from '@angular/core';
-import { InstagramPostComponent } from '../../shared/components/instagram-post/instagram-post.component';
 
 @Component({
   selector: 'app-about',
   standalone: true,
-  imports: [InstagramPostComponent],
+  imports: [NgClass],
   templateUrl: './about.component.html',
   styleUrl: './about.component.css'
 })
 export class AboutComponent {
+	public isDimmed: boolean = false;
 
+	public onHover(isHovered: boolean) {
+		this.isDimmed = isHovered;
+	}
 }

@@ -12,13 +12,7 @@
 			</p>
 		</main>
 	</section>
-	<div class="img-container">
-		<img [ngClass]="{'dimmed': isDimmed, 'not-dimmed': !isDimmed}" src="https://placehold.co/500x300"
-			alt="Placeholder">
-		<div class="flex-text-overlay" (mouseover)="onHover(true)" (mouseout)="onHover(false)">
-			<p [ngClass]="{'white-text': isDimmed, 'black-text': !isDimmed}">Clicca il pulsante per scoprire il mio percorso</p>
-			<button class="primary-btn"><i class="fa-solid fa-guitar fa-fw"> </i> Percorso</button>
-		</div>
-	</div>
+	<app-hoverable-image [source]="'https://placehold.co/500x300'"
+		overlayText="Clicca il pulsante per scoprire il mio percorsoakdajkbdakdkadkjabdkjabdkjabdkbawkjbd"></app-hoverable-image>
 	<!-- <app-instagram-post></app-instagram-post> -->
 </section>

@@ -1,9 +1,9 @@
 <div class="sidenav-overlay" [ngClass]="{ 'open': opened }" (click)="toggleSidenav()"></div>
 <div class="sidenav" [ngClass]="{ 'open': opened }">
 	<div>
-		<button (click)="toggleSidenav()">
+		<!-- <button (click)="toggleSidenav()">
 			<i class="fa-solid fa-x"></i>
-		</button>
+		</button> -->
 		<img id="logo" src="logoAndrea.png" alt="Logo of the Website" loading="eager">
 		<nav>
 			<a (click)="scrollToSection(paths.HOME)">
@@ -26,5 +26,4 @@
 			</a>
 		</nav>
 	</div>
-	<img id="bottom-side-image" src="https://placehold.co/300x500" alt="Placeholder">
 </div>

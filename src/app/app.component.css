@@ -19,3 +19,11 @@ app-top-floating-button {
 .hide {
 	display: none;
 }
+/* UTILS */
+
+.rest-of-page {
+	margin-top: 100px;
+	display: flex;
+	flex-direction: column;
+	row-gap: 40px;
+}

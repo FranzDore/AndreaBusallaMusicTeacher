@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { HoverableImageComponent } from '../../shared/components/hoverable-image/hoverable-image.component';
+import { HoverableImageComponent } from '../hoverable-image/hoverable-image.component';
 
 @Component({
   selector: 'app-about',

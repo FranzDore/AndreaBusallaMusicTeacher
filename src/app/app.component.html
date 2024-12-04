@@ -1,8 +1,8 @@
 <app-navbar></app-navbar>
 <app-sidenav></app-sidenav>
 <div class="mask" [ngClass]="{ 'hide': !opened }"></div>
-<div style="margin-top: 100px">
+<div class="rest-of-page">
 	<app-homepage [id]="paths.HOME" class="content-section"></app-homepage>
 	<app-about [id]="paths.ABOUT" class="content-section"></app-about>
-	<!-- <app-about [id]="paths.CONTACTS" class="content-section"></app-about> -->
+	<app-contacts></app-contacts>
 </div>

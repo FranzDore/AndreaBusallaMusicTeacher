@@ -1,17 +1,25 @@
 import { AfterViewInit, Component, ElementRef, OnInit } from '@angular/core';
 import { paths } from './app.routes';
-import { AboutComponent } from './pages/about/about.component';
+import { AboutComponent } from './shared/components/about/about.component';
 import { HomepageComponent } from './pages/homepage/homepage.component';
 import { NavbarComponent } from './shared/components/navbar/navbar.component';
 import { SidenavComponent } from './shared/components/sidenav/sidenav.component';
 import { CurrentSectionService } from './shared/services/current-section.service';
 import { SidenavService } from './shared/services/sidenav.service';
 import { NgClass } from '@angular/common';
+import { ContactsComponent } from './shared/components/contacts/contacts.component';
 
 @Component({
 	selector: 'app-root',
 	standalone: true,
-	imports: [NavbarComponent, HomepageComponent, AboutComponent, SidenavComponent, NgClass],
+	imports: [
+		NavbarComponent,
+		HomepageComponent,
+		AboutComponent,
+		SidenavComponent,
+		NgClass,
+		ContactsComponent
+	],
 	templateUrl: './app.component.html',
 	styleUrl: './app.component.css'
 })

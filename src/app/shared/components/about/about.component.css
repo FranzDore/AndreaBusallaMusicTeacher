@@ -27,3 +27,13 @@ main > p {
 	justify-content: center;
 	align-items: center;
 }
+
+@media screen and (max-width: 768px) {
+	.flex-divide {
+		row-gap: 15px;
+	}
+
+	main {
+		row-gap: 0px;
+	}
+}

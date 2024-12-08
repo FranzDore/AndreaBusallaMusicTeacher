@@ -13,6 +13,13 @@ aside > img {
 	display: block;
 }
 
+.full-w {
+	margin-top: 30px;
+	width: 100%;
+	display: none;
+	justify-content: center;
+}
+
 @media (max-width: 768px) {
 	.flex-divide {
 		flex-direction: column;
@@ -26,5 +33,9 @@ aside > img {
 	aside > img {
 		max-height: 50vh;
 		object-fit: contain;
+	}
+
+	.full-w {
+		display: flex;
 	}
 }

@@ -29,10 +29,9 @@ app-top-floating-button {
 	display: none;
 }
 
-
 .flex-col {
 	display: flex;
-	column-gap: 10px;
+	column-gap: 20px;
 }
 
 .flex-col * {

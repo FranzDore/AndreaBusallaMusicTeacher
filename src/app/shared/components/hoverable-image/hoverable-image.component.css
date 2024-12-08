@@ -26,6 +26,11 @@ div.img-container > div.flex-text-overlay > p {
     box-sizing: border-box;
 }
 
+img {
+	width: 100%;
+	height: auto;
+}
+
 @media screen and (max-width: 768px) {
 	div.img-container {
         width: 100%;

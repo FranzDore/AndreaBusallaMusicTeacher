@@ -10,7 +10,9 @@ import { Component, Input } from '@angular/core';
 })
 export class HoverableImageComponent {
 	@Input() public source: string = '';
+	@Input() public btnIconClass: string = '';
 	@Input() public overlayText: string = '';
+	@Input() public btnLabel: string = '';
 
 	public isDimmed: boolean = false;
 

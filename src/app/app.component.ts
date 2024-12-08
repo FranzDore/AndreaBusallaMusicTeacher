@@ -8,6 +8,7 @@ import { CurrentSectionService } from './shared/services/current-section.service
 import { SidenavService } from './shared/services/sidenav.service';
 import { NgClass } from '@angular/common';
 import { ContactsComponent } from './shared/components/contacts/contacts.component';
+import { CourseComponent } from './shared/components/course/course.component';
 
 @Component({
 	selector: 'app-root',
@@ -18,7 +19,8 @@ import { ContactsComponent } from './shared/components/contacts/contacts.compone
 		AboutComponent,
 		SidenavComponent,
 		NgClass,
-		ContactsComponent
+		ContactsComponent,
+		CourseComponent
 	],
 	templateUrl: './app.component.html',
 	styleUrl: './app.component.css'

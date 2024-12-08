@@ -1,2 +1,15 @@
-<h2>Come puoi contattarmi?</h2>
-<p>Scopri subito quali sono i miei contatti!</p>
+<div class="flex-divide">
+	<main>
+		<h2>Come puoi contattarmi?</h2>
+		<div class="flex-center">
+			<p>Scopri subito quali sono i miei contatti cliccando il tasto!</p>
+		</div>
+	</main>
+	<app-hoverable-image
+		[source]="'https://placehold.co/500x300'"
+		overlayText="Clicca il pulsante per scoprire i miei contatti"
+		btnIconClass="fa-phone"
+		btnLabel="Contatti"
+	>
+	</app-hoverable-image>
+</div>

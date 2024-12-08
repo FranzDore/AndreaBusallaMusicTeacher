@@ -3,6 +3,9 @@
 <div class="mask" [ngClass]="{ 'hide': !opened }"></div>
 <div class="rest-of-page">
 	<app-homepage [id]="paths.HOME" class="content-section"></app-homepage>
-	<app-about [id]="paths.ABOUT" class="content-section"></app-about>
-	<app-contacts></app-contacts>
+	<div class="flex-col">
+		<app-about [id]="paths.ABOUT" class="content-section"></app-about>
+		<app-course></app-course>
+		<app-contacts></app-contacts>
+	</div>
 </div>

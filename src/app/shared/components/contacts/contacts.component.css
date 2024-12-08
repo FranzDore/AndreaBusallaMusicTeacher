@@ -1,4 +1,27 @@
-p {
-	width: 100%;
+.flex-divide {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	height: 100%
+}
+
+main {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	height: 100%;
+}
+
+main > p {
+	flex-grow: 1;
+	height: 100%;
 	text-align: center;
+	vertical-align: middle;
+}
+
+.flex-center {
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }

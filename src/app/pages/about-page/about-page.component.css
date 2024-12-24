@@ -1,0 +1,12 @@
+.flex-row {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	align-items: center;
+	column-gap: 20px;
+	margin-bottom: 20px;
+}
+
+.text-center {
+	text-align: center;
+}

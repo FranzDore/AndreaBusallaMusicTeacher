@@ -47,3 +47,8 @@ body {
 h1, h2, h3 {
 	text-align: center;
 }
+
+a {
+	color: var(--primary-color);
+	text-decoration: none;
+}

@@ -1,10 +1,17 @@
 import { Routes } from '@angular/router';
+import { HomepageComponent } from './pages/homepage/homepage.component';
+import { AboutPageComponent } from './pages/about-page/about-page.component';
+import { ContactsPageComponent } from './pages/contacts-page/contacts-page.component';
+import { NotFoundComponent } from './pages/not-found/not-found.component';
 
 export const paths = {
 	HOME: 'home',
 	ABOUT: 'about',
 	CONTACTS: 'contacts',
 }
+
+// Website is very light, no need to lazy load components :)
+// This way we provide smooth animations and navigation
 
 export const routes: Routes = [
 	{
@@ -14,18 +21,18 @@ export const routes: Routes = [
 	},
 	{
 		path: 'home',
-		loadComponent: () => import('./pages/homepage/homepage.component').then(m => m.HomepageComponent)
+		component: HomepageComponent
 	},
 	{
 		path: 'about',
-		loadComponent: () => import('./pages/about-page/about-page.component').then(m => m.AboutPageComponent)
+		component: AboutPageComponent
 	},
 	{
 		path: 'contacts',
-		loadComponent: () => import('./pages/contacts-page/contacts-page.component').then(m => m.ContactsPageComponent)
+		component: ContactsPageComponent
 	},
 	{
 		path: '**',
-		loadComponent: () => import('./pages/not-found/not-found.component').then(m => m.NotFoundComponent)
+		component: NotFoundComponent
 	}
 ];

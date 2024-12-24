@@ -41,6 +41,7 @@ ul {
 }
 
 a {
+	color: var(--black);
 	text-decoration: none;
 	transition: border-bottom 1s ease;
 	display: inline-block;

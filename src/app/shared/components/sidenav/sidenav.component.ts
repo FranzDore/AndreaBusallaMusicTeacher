@@ -4,6 +4,7 @@ import { RouterModule } from '@angular/router';
 import { paths } from '../../../app.routes';
 import { navLinksLabels } from '../../constants/navigation.const';
 import { SidenavService } from '../../services/sidenav.service';
+import { BaseComponent } from '../base-component/base-component.component';
 
 @Component({
 	selector: 'app-sidenav',
@@ -12,13 +13,14 @@ import { SidenavService } from '../../services/sidenav.service';
 	templateUrl: './sidenav.component.html',
 	styleUrl: './sidenav.component.scss'
 })
-export class SidenavComponent implements OnInit {
+export class SidenavComponent extends BaseComponent implements OnInit {
 	public navLinksLabels = navLinksLabels;
-	public paths = paths;
 
 	public opened: boolean = false;
 
-	constructor(private sidenavService: SidenavService) {}
+	constructor(private sidenavService: SidenavService) {
+		super();
+	}
 
 	ngOnInit(): void {
 		this.sidenavService.opened.subscribe(opened => {

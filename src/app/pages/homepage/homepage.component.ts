@@ -7,6 +7,7 @@ import { CurrentSectionService } from '../../shared/services/current-section.ser
 import { SidenavService } from '../../shared/services/sidenav.service';
 import { AboutComponent } from '../../shared/components/about/about.component';
 import { ContactsComponent } from '../../shared/components/contacts/contacts.component';
+import { BaseComponent } from '../../shared/components/base-component/base-component.component';
 
 @Component({
 	selector: 'app-homepage',
@@ -15,8 +16,7 @@ import { ContactsComponent } from '../../shared/components/contacts/contacts.com
 	templateUrl: './homepage.component.html',
 	styleUrl: './homepage.component.css'
 })
-export class HomepageComponent implements OnInit, AfterViewInit {
-	public paths = paths;
+export class HomepageComponent extends BaseComponent implements OnInit, AfterViewInit {
 	public currentSection: string = 'home';
 	public opened: boolean = false;
 
@@ -24,7 +24,9 @@ export class HomepageComponent implements OnInit, AfterViewInit {
 		private currentSectionService: CurrentSectionService,
 		private sidenavService: SidenavService,
 		private elementRef: ElementRef
-	) {}
+	) {
+		super()
+	}
 
 	ngOnInit(): void {
 		this.sidenavService.opened.subscribe(opened => (this.opened = opened));

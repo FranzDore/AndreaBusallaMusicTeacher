@@ -3,6 +3,6 @@
 		alt="Placeholder">
 	<div class="flex-text-overlay" (mouseover)="onHover(true)" (mouseout)="onHover(false)">
 		<p [ngClass]="{'white-text': isDimmed, 'black-text': !isDimmed}">{{ overlayText }}</p>
-		<button class="primary-btn"><i [class]="'fa-solid fa-fw ' + btnIconClass" > </i> {{ btnLabel }}</button>
+		<button [routerLink]="pageLink" class="primary-btn"><i [class]="'fa-solid fa-fw ' + btnIconClass" > </i> {{ btnLabel }}</button>
 	</div>
 </div>

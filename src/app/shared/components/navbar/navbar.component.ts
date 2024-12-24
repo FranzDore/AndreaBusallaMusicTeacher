@@ -5,6 +5,7 @@ import { CurrentSectionService } from '../../services/current-section.service';
 import { Subscription } from 'rxjs';
 import { SidenavService } from '../../services/sidenav.service';
 import { navLinksLabels } from '../../constants/navigation.const';
+import { BaseComponent } from '../base-component/base-component.component';
 
 @Component({
 	selector: 'app-navbar',
@@ -13,8 +14,7 @@ import { navLinksLabels } from '../../constants/navigation.const';
 	templateUrl: './navbar.component.html',
 	styleUrl: './navbar.component.css'
 })
-export class NavbarComponent implements OnInit, OnDestroy {
-	public paths = paths;
+export class NavbarComponent extends BaseComponent implements OnInit, OnDestroy {
 	public navLinksLabels = navLinksLabels;
 
 	public activeNavLink: string = paths.HOME;
@@ -25,7 +25,9 @@ export class NavbarComponent implements OnInit, OnDestroy {
 	constructor(
 		private currentSectionService: CurrentSectionService,
 		private sidenavService: SidenavService
-	) {}
+	) {
+		super()
+	}
 
 	ngOnInit(): void {
 		this.sectionSub = this.currentSectionService.activeSection$.subscribe(

@@ -1,1 +1,9 @@
-<p>not-found works!</p>
+<div class="flex">
+	<h1>404</h1>
+	<h2>Oh no!</h2>
+	<p>Sembra che questa pagina non esista o sia stata cancellata :(</p>
+	<p>Prova a tornare alla home cliccando il pulsante qui sotto!</p>
+	<button [routerLink]="'/' + paths.HOME" class="primary-btn">
+		<i class="fa-solid fa-fw fa-home"> </i>Home
+	</button>
+</div>

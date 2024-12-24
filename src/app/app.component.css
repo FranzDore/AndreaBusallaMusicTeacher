@@ -1,52 +1,6 @@
-app-top-floating-button {
-	position: absolute;
-	bottom: 20px;
-	right: 20px;
-}
-
-.mask {
-	position: fixed;
-	display: none;
-	width: 100%;
-	height: 100%;
-	top: 0;
-	left: 0;
-	right: 0;
-	bottom: 0;
-	z-index: 999999 !important;
-}
-
 .rest-of-page {
 	margin-top: 100px;
 	display: flex;
 	flex-direction: column;
 	row-gap: 40px;
-}
-
-/* UTILS */
-
-.hide {
-	display: none;
-}
-
-.flex-col {
-	display: flex;
-	column-gap: 20px;
-}
-
-.flex-col * {
-	width: calc(100% / 3);
-	text-align: center;
-	height: auto
-}
-
-@media screen and (max-width: 768px) {
-	.flex-col {
-		flex-direction: column;
-		row-gap: 40px;
-	}
-
-	.flex-col * {
-		width: 100%;
-	}
 }

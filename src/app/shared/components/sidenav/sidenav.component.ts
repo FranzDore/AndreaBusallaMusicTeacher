@@ -2,7 +2,7 @@ import { NgClass } from '@angular/common';
 import { Component, type OnInit } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { paths } from '../../../app.routes';
-import { navLinks } from '../../constants/navigation.const';
+import { navLinksLabels } from '../../constants/navigation.const';
 import { SidenavService } from '../../services/sidenav.service';
 
 @Component({
@@ -13,7 +13,7 @@ import { SidenavService } from '../../services/sidenav.service';
 	styleUrl: './sidenav.component.scss'
 })
 export class SidenavComponent implements OnInit {
-	public navLinks = navLinks;
+	public navLinksLabels = navLinksLabels;
 	public paths = paths;
 
 	public opened: boolean = false;

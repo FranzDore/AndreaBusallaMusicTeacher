@@ -6,22 +6,22 @@
 		</button> -->
 		<img id="logo" src="logoAndrea.png" alt="Logo of the Website" loading="eager">
 		<nav>
-			<a (click)="scrollToSection(paths.HOME)">
+			<a [routerLink]="paths.HOME" (click)="toggleSidenav()">
 				<div>
 					<i class="fa-solid fa-house fa-fw"></i>
-					<p>{{ navLinks.HOME }}</p>
+					<p>{{ navLinksLabels.HOME }}</p>
 				</div>
 			</a>
-			<a (click)="scrollToSection(paths.ABOUT)">
+			<a [routerLink]="paths.ABOUT" (click)="toggleSidenav()">
 				<div>
 					<i class="fa-solid fa-user fa-fw"></i>
-					<p>{{ navLinks.ABOUT }}</p>
+					<p>{{ navLinksLabels.ABOUT }}</p>
 				</div>
 			</a>
-			<a (click)="scrollToSection(paths.CONTACTS)">
+			<a [routerLink]="paths.CONTACTS" (click)="toggleSidenav()">
 				<div>
 					<i class="fa-solid fa-phone fa-fw"></i>
-					<p>{{ navLinks.CONTACTS }}</p>
+					<p>{{ navLinksLabels.CONTACTS }}</p>
 				</div>
 			</a>
 		</nav>

@@ -1,4 +1,4 @@
-export const navLinks = {
+export const navLinksLabels = {
 	HOME: 'Home',
 	ABOUT: 'Chi sono',
 	CONTACTS: 'Contatti',

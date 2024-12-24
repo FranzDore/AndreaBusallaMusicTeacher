@@ -1,20 +1,26 @@
 <header>
-	<img id="logo" src="logoAndrea.png" alt="Logo of the Website" loading="eager" (click)="scrollToTop()">
+	<img
+		id="logo"
+		src="logoAndrea.png"
+		alt="Logo of the Website"
+		loading="eager"
+		[routerLink]="paths.HOME"
+	/>
 	<nav>
 		<ul>
 			<li>
-				<a [class.active]="activeNavLink === paths.HOME" (click)="scrollToTop()">
-					{{ navLinks.HOME }}
+				<a routerLinkActive="active" [routerLink]="paths.HOME">
+					{{ navLinksLabels.HOME }}
 				</a>
 			</li>
 			<li>
-				<a [class.active]="activeNavLink === paths.ABOUT" (click)="scrollToSection(paths.ABOUT)">
-					{{ navLinks.ABOUT }}
+				<a routerLinkActive="active" [routerLink]="paths.ABOUT">
+					{{ navLinksLabels.ABOUT }}
 				</a>
 			</li>
 			<li>
-				<a [class.active]="activeNavLink === paths.CONTACTS" (click)="scrollToSection(paths.CONTACTS)">
-					{{ navLinks.CONTACTS }}
+				<a routerLinkActive="active" [routerLink]="paths.CONTACTS">
+					{{ navLinksLabels.CONTACTS }}
 				</a>
 			</li>
 		</ul>

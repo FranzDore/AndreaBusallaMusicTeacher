@@ -20,6 +20,12 @@
 body {
 	margin: 0px 10vw;
 }
+
+img {
+	max-width: 100%;
+	object-fit: contain;
+}
+
 /* BUTTONS */
 
 .primary-btn {

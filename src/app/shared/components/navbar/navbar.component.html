@@ -7,6 +7,7 @@
 		[routerLink]="paths.HOME"
 	/>
 	<nav>
+		<!-- Could be ngFor on navgation constants. Shouldn't change, so it's static -->
 		<ul>
 			<li>
 				<a routerLinkActive="active" [routerLink]="paths.HOME">
@@ -21,6 +22,11 @@
 			<li>
 				<a routerLinkActive="active" [routerLink]="paths.CONTACTS">
 					{{ navLinksLabels.CONTACTS }}
+				</a>
+			</li>
+			<li>
+				<a routerLinkActive="active" [routerLink]="paths.COURSE">
+					{{ navLinksLabels.COURSE }}
 				</a>
 			</li>
 		</ul>

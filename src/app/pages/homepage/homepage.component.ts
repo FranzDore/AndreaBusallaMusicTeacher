@@ -1,13 +1,12 @@
-import { AfterViewInit, Component, ElementRef, OnInit } from '@angular/core';
-import { HomepageSharedComponent } from '../../shared/components/homepage-shared/homepage-shared.component';
 import { NgClass } from '@angular/common';
+import { AfterViewInit, Component, ElementRef, OnInit } from '@angular/core';
+import { AboutComponent } from '../../shared/components/about/about.component';
+import { BaseComponent } from '../../shared/components/base-component/base-component.component';
+import { ContactsComponent } from '../../shared/components/contacts/contacts.component';
 import { CourseComponent } from '../../shared/components/course/course.component';
-import { paths } from '../../app.routes';
+import { HomepageSharedComponent } from '../../shared/components/homepage-shared/homepage-shared.component';
 import { CurrentSectionService } from '../../shared/services/current-section.service';
 import { SidenavService } from '../../shared/services/sidenav.service';
-import { AboutComponent } from '../../shared/components/about/about.component';
-import { ContactsComponent } from '../../shared/components/contacts/contacts.component';
-import { BaseComponent } from '../../shared/components/base-component/base-component.component';
 
 @Component({
 	selector: 'app-homepage',
@@ -25,7 +24,7 @@ export class HomepageComponent extends BaseComponent implements OnInit, AfterVie
 		private sidenavService: SidenavService,
 		private elementRef: ElementRef
 	) {
-		super()
+		super();
 	}
 
 	ngOnInit(): void {

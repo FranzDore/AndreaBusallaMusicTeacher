@@ -1,5 +1,23 @@
-<div class="card-container">
-	<div class="card-body">
-
+<div class="info-card">
+	<div class="header">
+		<div class="header-content">
+			<h3>Corso di Chitarra</h3>
+			<span (click)="toggleMenu()">Tutti i Capitoli<i class="fa-solid fa-chevron-down fa-fw"></i></span>
+		</div>
+	</div>
+	<div class="body">
+		<p>
+			Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aspernatur labore tempora
+			numquam deserunt cum voluptates aliquid iusto ad quae minima.
+		</p>
 	</div>
 </div>
+@if (menuOpen) {
+	<div class="dropdown" @slideDown>
+		<ul>
+			@for (item of menuItems; track $index) {
+				<li>{{ item }}</li>
+			}
+		</ul>
+	</div>
+}

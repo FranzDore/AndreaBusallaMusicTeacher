@@ -3,4 +3,17 @@
 	Questo progetto nasce dalla volontà di avere un unico luogo dove poter trovare lezioni,
 	informazioni e consigli sul mondo della musica e su come approcciarsi
 </p>
-<app-info-course-card></app-info-course-card>
+<app-info-course-card
+	headerTitle="Corso di Chitarra"
+	difficulty="Novizio"
+	bodyDesc="Contiene tutte le nozioni di base per approcciarsi alla chitarra acustica."
+	[chapters]="courseChapters.beginner"
+	cardColor="PRIMARY"
+></app-info-course-card>
+<app-info-course-card
+	headerTitle="Corso di Chitarra"
+	difficulty="Avanzato"
+	bodyDesc="Contiene tutte le nozioni avanzate per eccellere nella chitarra acustica."
+	[chapters]="courseChapters.advanced"
+	cardColor="SECONDARY"
+></app-info-course-card>

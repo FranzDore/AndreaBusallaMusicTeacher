@@ -28,27 +28,58 @@ img {
 
 /* BUTTONS */
 
-.primary-btn {
+button {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	background: var(--primary-color);
-	color: var(--white);
 	padding: 0.5rem 1rem;
-	border: none;
+	border: 1px solid transparent;
 	border-radius: 10px;
 	cursor: pointer;
-	transition: background 0.3s ease;
 	column-gap: 6px;
+	transition: background 0.3s ease;
 }
 
-.primary-btn i {
+button.primary-btn {
+	background: var(--primary-color);
 	color: var(--white);
 }
 
-.primary-btn:hover {
+button.secondary-btn {
 	background: var(--secondary-color);
+	color: var(--white);
 }
+
+button.primary-btn i,
+button.secondary-btn i {
+	color: var(--white);
+}
+
+/* Old primary button */
+/* button.primary-btn:hover {
+	background: var(--secondary-color);
+} */
+
+button.primary-btn:hover {
+	background: var(--white);
+	color: var(--primary-color);
+	outline: solid 1px var(--primary-color)
+}
+
+button.secondary-btn:hover {
+	background: var(--white);
+	color: var(--secondary-color);
+	outline: solid 1px var(--secondary-color)
+}
+
+button.primary-btn:hover i {
+	color: var(--primary-color);
+}
+
+button.secondary-btn:hover i {
+	color: var(--secondary-color);
+}
+
 /* HEADINGS */
 h1, h2, h3 {
 	text-align: center;

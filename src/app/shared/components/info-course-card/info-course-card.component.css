@@ -1,8 +1,11 @@
+.margin-sides {
+	margin: 30px 10% 0 10%;
+}
+
 .info-card {
 	display: flex;
 	flex-direction: row;
 	width: 100%;
-	max-width: 800px;
 	border: 1px solid #ddd;
 	border-radius: 8px;
 	overflow: hidden;
@@ -14,9 +17,8 @@
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
-	width: 80%;
+	width: 30%;
 	padding: 1rem;
-	background-color: var(--primary-color);
 	color: white;
 }
 
@@ -25,6 +27,10 @@
 	flex-direction: column;
 	justify-content: space-between;
 	align-items: start;
+}
+
+.align-right {
+	align-self: end;
 }
 
 /* Dropdown Menu */
@@ -60,7 +66,8 @@
 
 .body {
 	display: flex;
-	align-items: center;
+	flex-direction: column;
+	align-items: start;
 	padding: 1rem 1rem;
 }
 
@@ -85,4 +92,14 @@ span > i {
 	.header-content {
 		align-items: center;
 	}
+}
+
+/* COLOR CLASSES FOR CARD */
+
+.primary {
+	background-color: var(--primary-color);
+}
+
+.secondary {
+	background-color: var(--secondary-color);
 }

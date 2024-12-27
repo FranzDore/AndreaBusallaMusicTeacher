@@ -1,23 +1,48 @@
-<div class="info-card">
-	<div class="header">
-		<div class="header-content">
-			<h3>Corso di Chitarra</h3>
-			<span (click)="toggleMenu()">Tutti i Capitoli<i class="fa-solid fa-chevron-down fa-fw"></i></span>
+<div class="margin-sides">
+	<div class="info-card">
+		<div
+			class="header"
+			[ngClass]="{
+				primary: cardColor === 'PRIMARY',
+				secondary: cardColor === 'SECONDARY'
+			}"
+		>
+			<div
+				class="header-content"
+				[ngStyle]="{ color: cardColor === 'PRIMARY' ? 'black' : 'white' }"
+			>
+				<h3>
+					{{ headerTitle }}
+				</h3>
+				<span (click)="toggleMenu()"
+					>Tutti i Capitoli<i
+						class="fa-solid fa-fw"
+						[ngClass]="{ 'fa-chevron-up': menuOpen, 'fa-chevron-down': !menuOpen }"
+					></i
+				></span>
+			</div>
+		</div>
+		<div class="body">
+			<span><strong>Livello: </strong> {{ difficulty }}</span>
+			<p>{{ bodyDesc }}</p>
+			<button
+				[ngClass]="{
+					'primary-btn': cardColor === 'PRIMARY',
+					'secondary-btn': cardColor === 'SECONDARY'
+				}"
+				class="align-right"
+			>
+				Scopri <i class="fa-solid fa-chevron-right fa-fw"></i>
+			</button>
 		</div>
 	</div>
-	<div class="body">
-		<p>
-			Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aspernatur labore tempora
-			numquam deserunt cum voluptates aliquid iusto ad quae minima.
-		</p>
-	</div>
+	@if (menuOpen) {
+		<div class="dropdown" @slideDown>
+			<ul>
+				@for (chapter of chapters; track $index) {
+					<li>{{ chapter }}</li>
+				}
+			</ul>
+		</div>
+	}
 </div>
-@if (menuOpen) {
-	<div class="dropdown" @slideDown>
-		<ul>
-			@for (item of menuItems; track $index) {
-				<li>{{ item }}</li>
-			}
-		</ul>
-	</div>
-}

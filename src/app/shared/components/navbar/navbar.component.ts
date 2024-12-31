@@ -6,11 +6,13 @@ import { Subscription } from 'rxjs';
 import { SidenavService } from '../../services/sidenav.service';
 import { navLinksLabels } from '../../constants/navigation.const';
 import { BaseComponent } from '../base-component/base-component.component';
+import { ThemeService } from '../../services/theme.service';
+import { NgClass } from '@angular/common';
 
 @Component({
 	selector: 'app-navbar',
 	standalone: true,
-	imports: [RouterModule],
+	imports: [RouterModule, NgClass],
 	templateUrl: './navbar.component.html',
 	styleUrl: './navbar.component.css'
 })
@@ -19,12 +21,14 @@ export class NavbarComponent extends BaseComponent implements OnInit, OnDestroy 
 
 	public activeNavLink: string = paths.HOME;
 	public showSidenav: boolean = false;
+	public isThemeDark: boolean = false;
 
 	private sectionSub?: Subscription;
 
 	constructor(
 		private currentSectionService: CurrentSectionService,
-		private sidenavService: SidenavService
+		private sidenavService: SidenavService,
+		private themeService: ThemeService
 	) {
 		super()
 	}
@@ -33,6 +37,9 @@ export class NavbarComponent extends BaseComponent implements OnInit, OnDestroy 
 		this.sectionSub = this.currentSectionService.activeSection$.subscribe(
 			sectionId => (this.activeNavLink = sectionId)
 		);
+		this.themeService.themeObservable.subscribe({
+			next: theme => (this.isThemeDark = theme === 'DARK')
+		})
 	}
 
 	public scrollToSection(sectionId: string) {
@@ -51,6 +58,10 @@ export class NavbarComponent extends BaseComponent implements OnInit, OnDestroy 
 
 	public toggleSidenav(): void {
 		this.sidenavService.toggle();
+	}
+
+	public toggleTheme(): void {
+		this.themeService.toggleTheme();
 	}
 
 	ngOnDestroy(): void {

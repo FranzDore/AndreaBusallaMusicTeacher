@@ -5,6 +5,7 @@
 		alt="Logo of the Website"
 		loading="eager"
 		[routerLink]="paths.HOME"
+		[ngClass]="{'invert-color': isThemeDark}"
 	/>
 	<nav>
 		<!-- Could be ngFor on navgation constants. Shouldn't change, so it's static -->
@@ -29,6 +30,7 @@
 					{{ navLinksLabels.COURSE }}
 				</a>
 			</li>
+			<button (click)="toggleTheme()">Tema</button>
 		</ul>
 		<i class="fa-solid fa-bars hamburger-menu" (click)="toggleSidenav()"></i>
 	</nav>

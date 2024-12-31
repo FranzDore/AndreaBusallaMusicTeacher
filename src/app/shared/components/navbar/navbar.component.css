@@ -22,6 +22,10 @@ header {
 	box-sizing: border-box;
 }
 
+#logo.invert-color {
+	filter: invert(100%);
+}
+
 #logo:hover {
 	cursor: pointer;
 }

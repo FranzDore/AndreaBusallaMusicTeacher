@@ -36,8 +36,8 @@
 /* Dropdown Menu */
 .dropdown {
 	margin-top: 0.5rem;
-	background: white;
-	color: #333;
+	background: var(--bkg-color);
+	color: var(--text-color);
 	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 	border-radius: 4px;
 	overflow: hidden;
@@ -61,7 +61,7 @@
 }
 
 .dropdown li:hover {
-	background-color: #f0f0f0;
+	background-color: var(--hover-color);
 }
 
 .body {

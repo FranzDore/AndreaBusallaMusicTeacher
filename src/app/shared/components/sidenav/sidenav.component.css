@@ -28,7 +28,7 @@
 	height: 100vh;
 	top: 0;
 	right: -70%;
-	background-color: var(--white);
+	background-color: var(--bkg-color);
 	overflow-x: hidden;
 	flex-direction: column;
 	transition: 0.3s;
@@ -38,13 +38,17 @@
 
 .sidenav.open {
 	right: 0;
-	box-shadow: 50px var(--black)
+	box-shadow: 50px var(--nav-box-shadow);
 }
 
 #logo {
 	width: 100%;
 	padding: 10px;
 	box-sizing: border-box;
+}
+
+#logo.invert-color {
+	filter: invert(100%);
 }
 
 .sidenav button {

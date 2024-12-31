@@ -30,6 +30,12 @@ header {
 	cursor: pointer;
 }
 
+nav {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+}
+
 .hamburger-menu {
 	display: none;
 	cursor: pointer;
@@ -42,6 +48,8 @@ ul {
 	padding: 0;
 	justify-content: space-evenly;
 	column-gap: 2vw;
+	margin-right: 2vw;
+	flex-wrap: nowrap;
 }
 
 a {
@@ -49,6 +57,8 @@ a {
 	text-decoration: none;
 	transition: border-bottom 1s ease;
 	display: inline-block;
+	/* overflow: hidden;
+	white-space: nowrap; */
 	/* Ensures ::after only covers the link text */
 	position: relative;
 	/* Set relative positioning to use ::after effectively */
@@ -102,5 +112,6 @@ a.active::after {
 
 	.hamburger-menu {
 		display: block;
+		margin-left: 20px;
 	}
 }

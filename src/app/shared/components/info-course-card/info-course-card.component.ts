@@ -30,7 +30,6 @@ export class InfoCourseCardComponent {
 	public menuOpen: boolean = false;
 
 	toggleMenu(): void {
-		console.warn(this.cardColor)
 		this.menuOpen = !this.menuOpen;
 	}
 }

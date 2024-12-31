@@ -4,11 +4,14 @@ import { paths } from '../../../app.routes';
 import { navLinksLabels } from '../../constants/navigation.const';
 import { SidenavService } from '../../services/sidenav.service';
 import { BaseComponent } from '../base-component/base-component.component';
+import { ThemeService } from '../../services/theme.service';
+import { NgClass } from '@angular/common';
+import { ThemeButtonToggleComponent } from '../theme-button-toggle/theme-button-toggle.component';
 
 @Component({
 	selector: 'app-navbar',
 	standalone: true,
-	imports: [RouterModule],
+	imports: [RouterModule, NgClass, ThemeButtonToggleComponent],
 	templateUrl: './navbar.component.html',
 	styleUrl: './navbar.component.css'
 })
@@ -17,6 +20,7 @@ export class NavbarComponent extends BaseComponent {
 
 	public activeNavLink: string = paths.HOME;
 	public showSidenav: boolean = false;
+	public isThemeDark: boolean = false;
 
 	constructor(private sidenavService: SidenavService) {
 		super();

@@ -9,16 +9,42 @@
 	--mobile: 768px;
 }
 
+body {
+	--text-color: #222;
+    --bkg-color: #fff;
+	--hover-color: #f0f0f0;
+    --btn-txt-color: var(--white);
+    --btn-bg-primary-color: var(--primary-color);
+    --btn-bg-secondary-color: var(--secondary-color);
+	--nav-bkg-color: rgba(255, 255, 255, 0.24);
+	--nav-box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+	--nav-border-color: rgba(255, 255, 255, 0.137);
+	--course-card-bkg-color: #f9f9f9;
+	--course-card-border-color: #ddd;
+    margin: 0px 10vw;
+    background: var(--bkg-color);
+}
+
+body.dark-theme {
+    --text-color: #eee;
+    --bkg-color: #252222;
+	--hover-color: #000000;
+    --btn-txt-color: rgb(46, 43, 43);
+    --btn-bg-primary-color: var(--primary-color);
+    --btn-bg-secondary-color: var(--secondary-color);
+	--nav-bkg-color: rgba(0, 0, 0, 0.24);
+	--nav-box-shadow: 0 4px 30px rgba(0, 0, 0, 0.6);
+	--nav-border-color: rgba(0, 0, 0, 0.415);
+	--course-card-bkg-color: #1F1F20;
+	--course-card-border-color: var(--black);
+}
+
 * {
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
 	font-family: 'Poppins', sans-serif;
-	color: var(--black)
-}
-
-body {
-	margin: 0px 10vw;
+	color: var(--text-color)
 }
 
 img {
@@ -41,43 +67,38 @@ button {
 }
 
 button.primary-btn {
-	background: var(--primary-color);
-	color: var(--white);
+	background: var(--btn-bg-primary-color);
+	color: var(--btn-txt-color);
 }
 
 button.secondary-btn {
 	background: var(--secondary-color);
-	color: var(--white);
+	color: var(--btn-txt-color);
 }
 
 button.primary-btn i,
 button.secondary-btn i {
-	color: var(--white);
+	color: var(--btn-text-color);
 }
 
-/* Old primary button */
-/* button.primary-btn:hover {
-	background: var(--secondary-color);
-} */
-
 button.primary-btn:hover {
-	background: var(--white);
-	color: var(--primary-color);
-	outline: solid 1px var(--primary-color)
+	background: var(--btn-text-color);
+	color: var(--btn-bg-primary-color);
+	outline: solid 1px var(--btn-bg-primary-color)
 }
 
 button.secondary-btn:hover {
-	background: var(--white);
-	color: var(--secondary-color);
-	outline: solid 1px var(--secondary-color)
+	background: var(--btn-text-color);
+	color: var(--btn-bg-secondary-color);
+	outline: solid 1px var(--btn-bg-secondary-color)
 }
 
 button.primary-btn:hover i {
-	color: var(--primary-color);
+	color: var(--btn-bg-primary-color);
 }
 
 button.secondary-btn:hover i {
-	color: var(--secondary-color);
+	color: var(--btn-bg-secondary-color);
 }
 
 /* HEADINGS */

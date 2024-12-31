@@ -4,7 +4,7 @@
 		<!-- <button (click)="toggleSidenav()">
 			<i class="fa-solid fa-x"></i>
 		</button> -->
-		<img id="logo" src="logoAndrea.png" alt="Logo of the Website" loading="eager">
+		<img id="logo" src="logoAndrea.png" alt="Logo of the Website" loading="eager" [ngClass]="{'invert-color': isThemeDark}">
 		<nav>
 			<a [routerLink]="paths.HOME" (click)="toggleSidenav()">
 				<div>

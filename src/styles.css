@@ -17,6 +17,9 @@ body {
     --btn-txt-color: var(--white);
     --btn-bg-primary-color: var(--primary-color);
     --btn-bg-secondary-color: var(--secondary-color);
+	--nav-bkg-color: rgba(255, 255, 255, 0.24);
+	--nav-box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+	--nav-border-color: rgba(255, 255, 255, 0.137);
     background: var(--bkg-color);
 }
 
@@ -27,6 +30,9 @@ body.dark-theme {
     --btn-txt-color: rgb(46, 43, 43);
     --btn-bg-primary-color: var(--primary-color);
     --btn-bg-secondary-color: var(--secondary-color);
+	--nav-bkg-color: rgba(0, 0, 0, 0.24);
+	--nav-box-shadow: 0 4px 30px rgba(0, 0, 0, 0.6);
+	--nav-border-color: rgba(0, 0, 0, 0.415);
 }
 
 * {

@@ -12,9 +12,6 @@ export const paths = {
 	COURSE: 'course'
 };
 
-// Website is very light, no need to lazy load components :)
-// This way we provide smooth animations and navigation
-
 export const routes: Routes = [
 	{
 		path: '',
@@ -23,22 +20,29 @@ export const routes: Routes = [
 	},
 	{
 		path: paths.HOME,
-		component: HomepageComponent
+		loadComponent: () =>
+			import('./pages/homepage/homepage.component').then(m => m.HomepageComponent)
 	},
 	{
 		path: paths.ABOUT,
-		component: AboutPageComponent
+		loadComponent: () =>
+			import('./pages/about-page/about-page.component').then(m => m.AboutPageComponent)
 	},
 	{
 		path: paths.CONTACTS,
-		component: ContactsPageComponent
+		loadComponent: () =>
+			import('./pages/contacts-page/contacts-page.component').then(
+				m => m.ContactsPageComponent
+			)
 	},
 	{
 		path: paths.COURSE,
-		component: CoursePageComponent
+		loadComponent: () =>
+			import('./pages/course-page/course-page.component').then(m => m.CoursePageComponent)
 	},
 	{
 		path: '**',
-		component: NotFoundComponent
+		loadComponent: () =>
+			import('./pages/not-found/not-found.component').then(m => m.NotFoundComponent)
 	}
 ];

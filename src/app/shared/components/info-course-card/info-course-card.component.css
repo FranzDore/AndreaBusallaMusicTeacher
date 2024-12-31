@@ -69,9 +69,10 @@
 	flex-direction: column;
 	align-items: start;
 	padding: 1rem 1rem;
+	width: 70%;
 }
 
-span {
+.header-content > span {
 	cursor: pointer;
 }
 

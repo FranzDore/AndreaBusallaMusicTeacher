@@ -6,10 +6,10 @@
 	display: flex;
 	flex-direction: row;
 	width: 100%;
-	border: 1px solid #ddd;
+	border: 1px solid var(--course-card-border-color);
 	border-radius: 8px;
 	overflow: hidden;
-	background-color: #f9f9f9;
+	background-color: var(--course-card-bkg-color);
 	transition: all 0.3s ease;
 }
 
@@ -19,7 +19,6 @@
 	justify-content: center;
 	width: 30%;
 	padding: 1rem;
-	color: white;
 }
 
 .header-content {
@@ -70,6 +69,10 @@
 	align-items: start;
 	padding: 1rem 1rem;
 	width: 70%;
+}
+
+.header-content * {
+	color: var(--white);
 }
 
 .header-content > span {

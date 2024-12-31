@@ -1,11 +1,11 @@
 import { animate, style, transition, trigger } from '@angular/animations';
-import { NgClass, NgStyle } from '@angular/common';
+import { NgClass } from '@angular/common';
 import { Component, Input } from '@angular/core';
 
 @Component({
 	selector: 'app-info-course-card',
 	standalone: true,
-	imports: [NgClass, NgStyle],
+	imports: [NgClass],
 	templateUrl: './info-course-card.component.html',
 	styleUrl: './info-course-card.component.css',
 	animations: [
@@ -25,7 +25,7 @@ export class InfoCourseCardComponent {
 	@Input() difficulty?: string;
 	@Input() bodyDesc?: string;
 	@Input() chapters?: string[];
-	@Input() cardColor?: 'PRIMARY' | 'SECONDARY' = 'PRIMARY'
+	@Input() cardColor?: 'PRIMARY' | 'SECONDARY' = 'PRIMARY';
 
 	public menuOpen: boolean = false;
 

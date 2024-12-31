@@ -1,10 +1,8 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { paths } from '../../../app.routes';
-import { CurrentSectionService } from '../../services/current-section.service';
-import { Subscription } from 'rxjs';
-import { SidenavService } from '../../services/sidenav.service';
 import { navLinksLabels } from '../../constants/navigation.const';
+import { SidenavService } from '../../services/sidenav.service';
 import { BaseComponent } from '../base-component/base-component.component';
 
 @Component({
@@ -14,25 +12,14 @@ import { BaseComponent } from '../base-component/base-component.component';
 	templateUrl: './navbar.component.html',
 	styleUrl: './navbar.component.css'
 })
-export class NavbarComponent extends BaseComponent implements OnInit, OnDestroy {
+export class NavbarComponent extends BaseComponent {
 	public navLinksLabels = navLinksLabels;
 
 	public activeNavLink: string = paths.HOME;
 	public showSidenav: boolean = false;
 
-	private sectionSub?: Subscription;
-
-	constructor(
-		private currentSectionService: CurrentSectionService,
-		private sidenavService: SidenavService
-	) {
-		super()
-	}
-
-	ngOnInit(): void {
-		this.sectionSub = this.currentSectionService.activeSection$.subscribe(
-			sectionId => (this.activeNavLink = sectionId)
-		);
+	constructor(private sidenavService: SidenavService) {
+		super();
 	}
 
 	public scrollToSection(sectionId: string) {
@@ -51,9 +38,5 @@ export class NavbarComponent extends BaseComponent implements OnInit, OnDestroy 
 
 	public toggleSidenav(): void {
 		this.sidenavService.toggle();
-	}
-
-	ngOnDestroy(): void {
-		this.sectionSub?.unsubscribe();
 	}
 }

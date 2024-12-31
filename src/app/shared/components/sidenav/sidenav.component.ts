@@ -1,11 +1,12 @@
 import { NgClass } from '@angular/common';
-import { Component, type OnInit } from '@angular/core';
+import { Component, OnDestroy, type OnInit } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { paths } from '../../../app.routes';
 import { navLinksLabels } from '../../constants/navigation.const';
 import { SidenavService } from '../../services/sidenav.service';
 import { BaseComponent } from '../base-component/base-component.component';
 import { ThemeService } from '../../services/theme.service';
+import { Subscription } from 'rxjs';
 
 @Component({
 	selector: 'app-sidenav',
@@ -14,11 +15,13 @@ import { ThemeService } from '../../services/theme.service';
 	templateUrl: './sidenav.component.html',
 	styleUrl: './sidenav.component.scss'
 })
-export class SidenavComponent extends BaseComponent implements OnInit {
+export class SidenavComponent extends BaseComponent implements OnInit, OnDestroy {
 	public navLinksLabels = navLinksLabels;
 
 	public opened: boolean = false;
 	public isThemeDark: boolean = false;
+
+	private themeSubscription?: Subscription;
 
 	constructor(
 		private sidenavService: SidenavService,
@@ -31,7 +34,7 @@ export class SidenavComponent extends BaseComponent implements OnInit {
 		this.sidenavService.opened.subscribe(opened => {
 			this.opened = opened;
 		});
-		this.themeService.themeObservable.subscribe({
+		this.themeSubscription = this.themeService.themeObservable.subscribe({
 			next: theme => (this.isThemeDark = theme === 'DARK')
 		})
 	}
@@ -52,5 +55,9 @@ export class SidenavComponent extends BaseComponent implements OnInit {
 				});
 
 		this.toggleSidenav();
+	}
+
+	ngOnDestroy(): void {
+		this.themeSubscription?.unsubscribe();
 	}
 }

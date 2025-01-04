@@ -19,10 +19,11 @@ body {
 	--nav-bkg-color: rgba(255, 255, 255, 0.24);
 	--nav-box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
 	--nav-border-color: rgba(255, 255, 255, 0.137);
+	--footer-bg-color: #ababab;
 	--course-card-bkg-color: #f9f9f9;
 	--course-card-border-color: #ddd;
-    margin: 0px 10vw;
     background: var(--bkg-color);
+	position: relative;
 }
 
 body.dark-theme {
@@ -35,6 +36,7 @@ body.dark-theme {
 	--nav-bkg-color: rgba(0, 0, 0, 0.24);
 	--nav-box-shadow: 0 4px 30px rgba(0, 0, 0, 0.6);
 	--nav-border-color: rgba(0, 0, 0, 0.415);
+	--footer-bg-color: #1b1b1b;
 	--course-card-bkg-color: #1F1F20;
 	--course-card-border-color: var(--black);
 }

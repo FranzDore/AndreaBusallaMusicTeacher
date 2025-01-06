@@ -1,6 +1,17 @@
 .m-t-10 {
     margin-top: 10vh;
     width: 100vw;
-	background-color: var(--footer-bg-color);
+}
 
+p {
+	color: var(--footer-text-color);
+}
+
+footer {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 100%;
+	padding: 2vw;
+	background-color: var(--footer-bg-color);
 }

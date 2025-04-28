@@ -24,7 +24,7 @@ body {
 	--course-card-bkg-color: #f9f9f9;
 	--course-card-border-color: #ddd;
     background: var(--bkg-color);
-	position: relative
+	position: relative;
 }
 
 body.dark-theme {
